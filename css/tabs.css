@@ -1,0 +1,115 @@
+/* Общие стили для правильной работы табов */
+
+.tabs-ox2 ul,
+.tabs ul * {
+    list-style: none none;
+    font: 14px Arial, sans-serif;
+    line-height: 1.4em;
+    margin: 0;
+    padding: 0;
+  
+    
+}
+/* Общие стили для вкладок */
+
+.tabs-ox2 ul:first-child {
+    display: table;
+    width: 100%;
+}
+.tabs-ox2 ul:first-child li {
+    display: table-cell;
+    border-right-width: 0 !important;
+    padding: 10px 12px !important;
+    cursor: pointer;
+    border: 1px solid #E5E5E5 !important;
+    
+}
+.tabs-ox2 ul:first-child li:first-child{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius:5px;
+}
+.tabs-ox2 ul:first-child li:last-child{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius:5px;
+}
+
+
+/* Общие стили для контента табов*/
+
+.tabs-ox2 ul:last-child {
+    border-top: 0 !important;
+}
+.tabs-ox2 ul:last-child li {
+    padding: 10px 12px !important;
+    display: none;
+}
+.tabs-ox2 ul:last-child li.active {
+    display: block;
+}
+.tabs-ox2 {
+    width: 705px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Не активная вкладка */
+
+
+.tabs-ox2 ul:first-child li {
+    font-family: ZurichBT;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 20px;
+    color: #444137;
+    
+    text-align: center;
+    background: linear-gradient(0deg, #f4f3f1 0%, #ffffff 100%);
+    background: -webkit-linear-gradient(90deg, #f4f3f1 0%, #ffffff 100%);
+    background: -moz-linear-gradient(90deg, #f4f3f1 0%, #ffffff 100%);
+    background: -o-linear-gradient(90deg, #f4f3f1 0%, #ffffff 100%);
+    background: -ms-linear-gradient(90deg, #f4f3f1 0%, #ffffff 100%);
+    background: linear-gradient(0deg, #f4f3f1 0%, #ffffff 100%);
+}
+
+/* При наведении на вкладку */
+
+.tabs-ox2 ul:first-child li:hover {
+    background-color: #f5f5f5;
+}
+
+/* Активная вкладка */
+.active span{
+    display: block;
+    position: absolute;
+    top: 34px;
+    left: 50%;
+    transform: rotate(90deg);
+    color: #13961c;    
+}
+.tabs-ox2 ul:first-child li.active {
+     font-family: ZurichBT;
+    color: #ffffff;
+    font-weight: normal;
+    font-size: 18px;
+    text-shadow: 0px -2px 0px rgba(0, 92, 19, 0.63);
+    background: linear-gradient(0deg, #0f941a 0%, #66c13e 100%);
+    background: -webkit-linear-gradient(90deg, #0f941a 0%, #66c13e 100%);
+    background: -moz-linear-gradient(90deg, #0f941a 0%, #66c13e 100%);
+    background: -o-linear-gradient(90deg, #0f941a 0%, #66c13e 100%);
+    background: -ms-linear-gradient(90deg, #0f941a 0%, #66c13e 100%);
+    background: linear-gradient(0deg, #0f941a 0%, #66c13e 100%);
+    position: relative;
+    transform: rotate(90ged);
+   
+    
+}
+.arrow{
+    text-shadow: none !important;
+    color: #13961c;
+    padding-right: 4px;
+    font-size: 11px;
+    vertical-align: bottom;
+}
+
+/* Дизайн контента вкладок */
+

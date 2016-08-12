@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Wine</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    <link rel="stylesheet" type="text/css" href="css/style-news.css" />
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+
+
+    <script type="text/javascript" src="js/jquery1.8.2.js"></script>
+
+    <script src="js/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="js/my_scripts.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHSDYrIGVXwYkFAVE6OsjbXtnXJePQpgg"></script>
+    <script language="JavaScript" type="text/javascript">
+        $(function() {
+            $.fn.scrollToTop = function() {
+                $(this).hide().removeAttr("href");
+                if ($(window).scrollTop() >= "250") $(this).fadeIn("slow")
+                var scrollDiv = $(this);
+                $(window).scroll(function() {
+                    if ($(window).scrollTop() <= "250") $(scrollDiv).fadeOut("slow")
+                    else $(scrollDiv).fadeIn("slow")
+                });
+                $(this).click(function() {
+                    $("html, body").animate({
+                        scrollTop: 0
+                    }, "slow")
+                })
+            }
+        });
+
+        $(function() {
+            $("#Go_Top").scrollToTop();
+            $(".right-icons ").scrollToTop();
+
+        });
+    </script>
+ <script type="text/javascript">
+ function initialize() {
+ var latlng = new google.maps.LatLng(50.443103, 30.534923);
+ var settings = {
+ zoom: 15,
+ center: latlng,
+ mapTypeControl: true,
+ mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+ navigationControl: true,
+ navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+ mapTypeId: google.maps.MapTypeId.ROADMAP
+ };
+    </script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <header id="header">
+            <div class="header-top">
+                <div class="container">
+                    <nav class="about_company indent">
+                        <a href="#">О нас</a>
+                        <span>|</span>
+                        <a href="#">Блог</a>
+                        <span>|</span>
+                        <a href="#">Контакты</a>
+                    </nav>
+                    <!-- about_company -->
+                    <nav class="phone indent">
+                        <span class="word_phone">телефон:</span>
+                        <span>067-242-48-06,</span>
+                        <span>094-822-57-07,</span>
+                        <span> 067-242-48-03</span>
+                    </nav>
+                    <!-- phone -->
+                    <nav class="authorization">
+                        <a class="show_popup" rel="reg_form" href="#">Авторизация <span>|</span> регистрация</a>
+                    </nav>
+                    <div class="popup reg_form">
+                        <a class="close" href="#">&#215</a>
+                        <h2>Авторизация</h2>
+                        <form method="post" action="">
+                            <label for="login">Логин</label>
+                            <input type="text" name="login" />
+                            <label for="password">Пароль</label>
+                            <input type="password" name="password" />
+                            <input type="checkbox" name="remember" value="remember">
+                            <label class="remember_checkbox">Запомнить</label>
+                            <input type="submit" value="Войти" />
+                        </form>
+                        <div class="remember_login">
+                            <a href="#">Забыл пароль?</a>
+                            <a href="#">Забыл логин?</a>
+                        </div>
+                        <div class="new_account">
+                            <h3>Новый клиент?</h3>
+                            <a href="#">Создать акаунт</a>
+                        </div>
+                    </div>
+                    <!-- popup -->
+                </div>
+                <!-- container -->
+            </div>
+            <!-- header-top -->
+            <div class="header_bottom">
+                <div class="container">
+                    <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+                    <ul class="menu_wine">
+                        <li class="point_wine"><a href="#">Вино</a>
+                        <ul class="submenu">
+                            <li><a href="#">Белое</a></li>
+                            <li><a href="#">Красное</a></li>
+                            <li><a href="#">Крепленое</a></li>
+                        </ul>
+                        </li>
+                        <li><a href="#">Игристое вино</a></li>
+                        <li><a href="#">Крепкие алкогольніе напитки</a></li>
+                        <li><a href="#">Пиво</a></li>
+                        <li><a href="#">На подарок</a></li>
+                        <li><a href="#">Продукты</a></li>
+                    </ul>
+                    <a href="#" class="search" rel="search_form">
+                        <img src="images/w128h1281338911651zoom.png" alt="search">
+                    </a>
+                    <form method="post" action="" class="field_search search_form">
+                        <input type="text" placeholder="Type text and hit enter">
+                        <a href="#" class="close_search">&#215</a>
+                    </form>
+
+                    <div class="basket">
+                        <a class="basket_block" rel="basket_form" href="#">
+                            <img src="images/basket.png" alt="basket">
+                            <span class="basket_orders">3</span>
+                            <span>$355</span>
+                        </a>
+                    </div>
+                    <!-- basket -->
+                    <div class="message">
+                        <a href="#" class="doc_header">
+                            
+                            <span>3</span>
+                        </a>
+                    </div>
+                    <!-- message -->
+                    <div class="like">
+                        <a href="#" class="like_header">
+                            
+                            <span>12</span>
+                        </a>
+                    </div>
+                    <!-- like -->
+                    <div class="delivery">
+                        <p>Доставим за 2 часа</p>
+                        <img src="images/icon_button.png" alt="bus">
+                    </div>
+                    <div class="open_basket basket_form">
+                        <h3>Recently added items(s)</h3>
+                        <ul class="list_basket">
+                            <li>
+                                <div class="buy_product">
+                                    <a href="#">
+                                        <img src="images/basket_product.png" alt="product">
+                                    </a>
+                                    <h4><a href="#">Cursus eleifend elit aenean auctor wisi et urna.</a></h4>
+                                    <span class="description_product">Product Code PS34</span>
+                                </div>
+                                <div class="price_quantity">
+                                    <span class="quantity">1 &#215;</span>
+                                    <span class="price_product">$99.00</span>
+                                    <a href="#">&#215;</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="buy_product">
+                                    <a href="#">
+                                        <img src="images/basket_product.png" alt="product">
+                                    </a>
+                                    <h4><a href="#">Cursus eleifend elit aenean auctor wisi et urna.</a></h4>
+                                    <span class="description_product">Product Code PS34</span>
+                                </div>
+                                <div class="price_quantity">
+                                    <span class="quantity">1 &#215;</span>
+                                    <span class="price_product">$99.00</span>
+                                    <a href="#">&#215;</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="buy_product">
+                                    <a href="#">
+                                        <img src="images/basket_product.png" alt="product">
+                                    </a>
+                                    <h4><a href="#">Cursus eleifend elit aenean auctor wisi et urna.</a></h4>
+                                    <span class="description_product">Product Code PS34</span>
+                                </div>
+                                <div class="price_quantity">
+                                    <span class="quantity">1 &#215;</span>
+                                    <span class="price_product">$99.00</span>
+                                    <a href="#">&#215;</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="score">
+                            <div class="left_score">
+                                <span>Tax: </span>
+                                <span>Discount:</span>
+                                <span>Total:</span>
+                            </div>
+                            <div class="right_score">
+                                <span>$0.00</span>
+                                <span>$37.00</span>
+                                <span class="total">$999.00</span>
+
+                            </div>
+                        </div>
+
+                        <div class="basket_submit">
+                            <a href="#" class="view_cart"> View Cart</a>
+                            <a href="#" class="checkout">Checkout</a>
+                        </div>
+
+                    </div>
+                    <!-- open_basket -->
+                </div>
+                <!-- container -->
+            </div>
+            <!-- header_bottom -->
+        </header>
+        <!-- header -->
+        <section class="flexslider">
+            <ul class="slides">
+                <li>
+                    <img src="images/slider_img.png" />
+                </li>
+                <li>
+                    <img src="images/slider_img.png" />
+                </li>
+                <li>
+                    <img src="images/slider_img.png" />
+                </li>
+            </ul>
+        </section>
+        <!-- flexslider -->
+        <article class="content">
+            <div class="container">
+                <div class="advantages">
+                    <ul>
+                        <li class="present_list">
+                            <img src="images/price.png" alt="present">
+                            <h2>АКЦИИ</h2>
+                        </li>
+                        <li class="delivery_list">
+                            <img src="images/delivery.png" alt="delivery">
+                            <h2><span >ДОСТАВКА</span> Товара</h2>
+                        </li>
+                        <li class="program_list">
+                            <img src="images/heart_red.png" alt="heart_red">
+                            <h2><span >Программа</span> Лояльности</h2>
+                        </li>
+                    </ul>
+                </div>
+                <!-- advantages -->
+                <div class="right-icons">
+                    <ul>
+                        <li class="facebook_right">
+                            <a href="#"></a>
+                        </li>
+                        <li class="twitter_right">
+                            <a href="#"></a>
+                        </li>
+                        <li class="contact_us_right">
+                            <a href="#"></a>
+                        </li>
+                        <li class="location_right">
+                            <a href="#"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="alcohol_selection">
+                    <div class="tabs">
+                        <ul class="list_tabs">
+                            <li>Все</li>
+                            <li>Вина</li>
+                            <li>Игристые вина</li>
+                            <li>Текила</li>
+                            <li>Водка</li>
+                        </ul>
+                        <div class="content_tabs">
+                            <div class="content_all">
+                                <div id="wn-container" class="wn-container">
+                                    <div class="wn-wrapper">
+                                        <div class="wn-item">
+                                            <div class="product">
+                                                <img src="images/wine_product.png" class="bottle" alt="product-wine">
+                                                <img src="images/stock.png" class="stock" alt="stock">
+                                                <h4>Вино	&#8243Грушки яблочки&#8243:) </h4>
+                                                <p><span class="first_price">$79.00</span>$36.00
+                                                </p>
+                                                <img src="images/rating.png" class="rating" alt="rating">
+                                                <a href="#" class="buy_button">Купить</a>
+                                                <div class="delivery_content">
+                                                    <a class="" href="#">
+
+                                                    </a>
+                                                </div>
+                                                <div class="like_product">
+                                                    <a href="#">
+
+                                                    </a>
+                                                </div>
+                                                <a href="#" class="review_button">Просмотр</a>
+                                            </div>
+                                            <!-- product -->
+
+                                        </div>
+                                        <div class="wn-item ">
+                                            <div class="product">
+                                                <img src="images/wine_product.png" class="bottle" alt="product-wine">
+                                                <h4>Вино &#8243Грушки яблочки&#8243:) </h4>
+                                                <p>$99.00</p>
+                                                <img src="images/rating.png" class="rating" alt="rating">
+                                                <a href="#" class="buy_button">Купить</a>
+                                                <div class="delivery_content">
+                                                    <a href="#">
+
+                                                    </a>
+                                                </div>
+                                                <div class="like_product">
+                                                    <a href="#">
+
+                                                    </a>
+                                                </div>
+                                                <a href="#" class="review_button">Просмотр</a>
+                                            </div>
+                                            <!— product —>
+
+                                        </div>
+                                        <div class="wn-item">
+                                            <div class="product">
+                                                <img src="images/wine_product.png" class="bottle" alt="product-wine">
+                                                <h4>Вино &#8243Грушки яблочки&#8243:) </h4>
+                                                <p>$99.00</p>
+                                                <img src="images/rating.png" class="rating" alt="rating">
+                                                <a href="#" class="buy_button">Купить</a>
+                                                <div class="delivery_content">
+                                                    <a href="#">
+
+                                                    </a>
+                                                </div>
+                                                <div class="like_product">
+                                                    <a href="#">
+
+                                                    </a>
+                                                </div>
+                                                <a href="#" class="review_button">Просмотр</a>
+                                            </div>
+                                            <!— product —>
+
+                                        </div>
+                                        <div class="wn-item">
+
+                                            <div class="product">
+                                                <img src="images/wine_product.png" class="bottle" alt="product-wine">
+                                                <h4>Вино &#8243Грушки яблочки&#8243:) </h4>
+                                                <p>$99.00</p>
+                                                <img src="images/rating.png" class="rating" alt="rating">
+                                                <a href="#" class="buy_button">Купить</a>
+                                                <div class="delivery_content">
+                                                    <a href="#">
+
+                                                    </a>
+                                                </div>
+                                                <div class="like_product">
+                                                    <a href="#">
+
+                                                    </a>
+                                                </div>
+                                                <a href="#" class="review_button">Просмотр</a>
+                                            </div>
+                                            <!— product —>
+
+                                        </div>
+
+                                    </div>
+                                    <script type="text/javascript" src="js/jquery.contentcarousel_wane.js"></script>
+                                    <script type="text/javascript">
+                                        $('#wn-container').contentcarousel();
+                                    </script>
+                                </div>
+
+                                </ul>
+                            </div>
+                            <div>
+
+                                <div id="wn-containers" class="wn-container">
+                                    <div class="wn-wrapper">
+                                        <div class="wn-item">
+                                            <div class="product">
+                                                <img src="images/wine_product.png" class="bottle" alt="product-wine">
+                                                <img src="images/stock.png" class="stock" alt="stock">
+                                                <h4>Вино	&#8243Грушки яблочки&#8243:) </h4>
+                                                <p><span class="first_price">$79.00</span>$36.00
+                                                </p>
+                                                <img src="images/rating.png" class="rating" alt="rating">
+                                                <a href="#" class="buy_button">Купить</a>
+                                                <div class="delivery_content">
+                                                    <a class="" href="#">
+
+                                                    </a>
+                                                </div>
+                                                <div class="like_product">
+                                                    <a href="#">
+
+                                                    </a>
+                                                </div>
+                                                <a href="#" class="review_button">Просмотр</a>
+                                            </div>
+                                            <!-- product -->
+
+                                        </div>
+                                        <div class="wn-item ">
+                                            <div class="product">
+                                                <img src="images/wine_product.png" class="bottle" alt="product-wine">
+                                                <img src="images/stock.png" class="stock" alt="stock">
+                                                <h4>Вино	&#8243Грушки яблочки&#8243:) </h4>
+                                                <p><span class="first_price">$79.00</span>$36.00
+                                                </p>
+                                                <img src="images/rating.png" class="rating" alt="rating">
+                                                <a href="#" class="buy_button">Купить</a>
+                                                <div class="delivery_content">
+                                                    <a class="" href="#">
+
+                                                    </a>
+                                                </div>
+                                                <div class="like_product">
+                                                    <a href="#">
+
+                                                    </a>
+                                                </div>
+                                                <a href="#" class="review_button">Просмотр</a>
+                                            </div>
+                                            <!-- product -->
+
+                                        </div>
+                                        <div class="wn-item">
+                                            <div class="product">
+                                                <img src="images/wine_product.png" class="bottle" alt="product-wine">
+                                                <img src="images/stock.png" class="stock" alt="stock">
+                                                <h4>Вино	&#8243Грушки яблочки&#8243:) </h4>
+                                                <p><span class="first_price">$79.00</span>$36.00
+                                                </p>
+                                                <img src="images/rating.png" class="rating" alt="rating">
+                                                <a href="#" class="buy_button">Купить</a>
+                                                <div class="delivery_content">
+                                                    <a class="" href="#">
+
+                                                    </a>
+                                                </div>
+                                                <div class="like_product">
+                                                    <a href="#">
+
+                                                    </a>
+                                                </div>
+                                                <a href="#" class="review_button">Просмотр</a>
+                                            </div>
+                                            <!-- product -->
+
+                                        </div>
+                                        <div class="wn-item">
+
+                                            <div class="product">
+                                                <img src="images/wine_product.png" class="bottle" alt="product-wine">
+                                                <img src="images/stock.png" class="stock" alt="stock">
+                                                <h4>Вино	&#8243Грушки яблочки&#8243:) </h4>
+                                                <p><span class="first_price">$79.00</span>$36.00
+                                                </p>
+                                                <img src="images/rating.png" class="rating" alt="rating">
+                                                <a href="#" class="buy_button">Купить</a>
+                                                <div class="delivery_content">
+                                                    <a class="" href="#">
+
+                                                    </a>
+                                                </div>
+                                                <div class="like_product">
+                                                    <a href="#">
+
+                                                    </a>
+                                                </div>
+                                                <a href="#" class="review_button">Просмотр</a>
+                                            </div>
+                                            <!-- product -->
+
+                                        </div>
+                                    </div>
+                                    <script type="text/javascript">
+                                        $('#wn-containers').contentcarousel();
+                                    </script>
+                                </div>
+                            </div>
+                            <div>
+                                <div id="iwn-container" class="wn-container">
+                                    <div class="wn-wrapper">
+                                        <div class="wn-item">
+                                            <div class="product">
+                                                <img src="images/wine_product.png" class="bottle" alt="product-wine">
+                                                <img src="images/stock.png" class="stock" alt="stock">
+                                                <h4>Вино	&#8243Грушки яблочки&#8243:) </h4>
+                                                <p><span class="first_price">$79.00</span>$36.00
+                                                </p>
+                                                <img src="images/rating.png" class="rating" alt="rating">
+                                                <a href="#" class="buy_button">Купить</a>
+                                                <div class="delivery_content">
+                                                    <a class="" href="#">
+
+                                                    </a>
+                                                </div>
+                                                <div class="like_product">
+                                                    <a href="#">
+
+                                                    </a>
+                                                </div>
+                                                <a href="#" class="review_button">Просмотр</a>
+                                            </div>
+                                            <!-- product -->
+
+                                        </div>
+                                        <div class="wn-item ">
+                                            <div class="product">
+                                                <img src="images/wine_product.png" class="bottle" alt="product-wine">
+                                                <img src="images/stock.png" class="stock" alt="stock">
+                                                <h4>Вино	&#8243Грушки яблочки&#8243:) </h4>
+                                                <p><span class="first_price">$79.00</span>$36.00
+                                                </p>
+                                                <img src="images/rating.png" class="rating" alt="rating">
+                                                <a href="#" class="buy_button">Купить</a>
+                                                <div class="delivery_content">
+                                                    <a class="" href="#">
+
+                                                    </a>
+                                                </div>
+                                                <div class="like_product">
+                                                    <a href="#">
+
+                                                    </a>
+                                                </div>
+                                                <a href="#" class="review_button">Просмотр</a>
+                                            </div>
+                                            <!-- product -->
+
+                                        </div>
+                                        <div class="wn-item">
+                                            <div class="product">
+                                                <img src="images/wine_product.png" class="bottle" alt="product-wine">
+                                                <img src="images/stock.png" class="stock" alt="stock">
+                                                <h4>Вино	&#8243Грушки яблочки&#8243:) </h4>
+                                                <p><span class="first_price">$79.00</span>$36.00
+                                                </p>
+                                                <img src="images/rating.png" class="rating" alt="rating">
+                                                <a href="#" class="buy_button">Купить</a>
+                                                <div class="delivery_content">
+                                                    <a class="" href="#">
+
+                                                    </a>
+                                                </div>
+                                                <div class="like_product">
+                                                    <a href="#">
+
+                                                    </a>
+                                                </div>
+                                                <a href="#" class="review_button">Просмотр</a>
+                                            </div>
+                                            <!-- product -->
+
+                                        </div>
+                                        <div class="wn-item">
+                                            <div class="product">
+                                                <img src="images/wine_product.png" class="bottle" alt="product-wine">
+                                                <img src="images/stock.png" class="stock" alt="stock">
+                                                <h4>Вино	&#8243Грушки яблочки&#8243:) </h4>
+                                                <p><span class="first_price">$79.00</span>$36.00
+                                                </p>
+                                                <img src="images/rating.png" class="rating" alt="rating">
+                                                <a href="#" class="buy_button">Купить</a>
+                                                <div class="delivery_content">
+                                                    <a class="" href="#">
+
+                                                    </a>
+                                                </div>
+                                                <div class="like_product">
+                                                    <a href="#">
+
+                                                    </a>
+                                                </div>
+                                                <a href="#" class="review_button">Просмотр</a>
+                                            </div>
+                                            <!-- product -->
+
+                                        </div>
+
+                                    </div>
+
+                                    <script type="text/javascript">
+                                        $('#iwn-container').contentcarousel();
+                                    </script>
+                                </div>
+                            </div>
+                            <div>
+                                <div id="twn-container" class="wn-container">
+                                    <div class="wn-wrapper">
+                                        <div class="wn-item">
+                                            <div class="product">
+                                                <img src="images/wine_product.png" class="bottle" alt="product-wine">
+                                                <img src="images/stock.png" class="stock" alt="stock">
+                                                <h4>Вино	&#8243Грушки яблочки&#8243:) </h4>
+                                                <p><span class="first_price">$79.00</span>$36.00
+                                                </p>
+                                                <img src="images/rating.png" class="rating" alt="rating">
+                                                <a href="#" class="buy_button">Купить</a>
+                                                <div class="delivery_content">
+                                                    <a class="" href="#">
+
+                                                    </a>
+                                                </div>
+                                                <div class="like_product">
+                                                    <a href="#">
+
+                                                    </a>
+                                                </div>
+                                                <a href="#" class="review_button">Просмотр</a>
+                                            </div>
+                                            <!-- product -->
+
+                                        </div>
+                                        <div class="wn-item ">
+                                            <div class="product">
+                                                <img src="images/wine_product.png" class="bottle" alt="product-wine">
+                                                <img src="images/stock.png" class="stock" alt="stock">
+                                                <h4>Вино	&#8243Грушки яблочки&#8243:) </h4>
+                                                <p><span class="first_price">$79.00</span>$36.00
+                                                </p>
+                                                <img src="images/rating.png" class="rating" alt="rating">
+                                                <a href="#" class="buy_button">Купить</a>
+                                                <div class="delivery_content">
+                                                    <a class="" href="#">
+
+                                                    </a>
+                                                </div>
+                                                <div class="like_product">
+                                                    <a href="#">
+
+                                                    </a>
+                                                </div>
+                                                <a href="#" class="review_button">Просмотр</a>
+                                            </div>
+                                            <!-- product -->
+
+                                        </div>
+                                        <div class="wn-item">
+                                            <div class="product">
+                                                <img src="images/wine_product.png" class="bottle" alt="product-wine">
+                                                <img src="images/stock.png" class="stock" alt="stock">
+                                                <h4>Вино	&#8243Грушки яблочки&#8243:) </h4>
+                                                <p><span class="first_price">$79.00</span>$36.00
+                                                </p>
+                                                <img src="images/rating.png" class="rating" alt="rating">
+                                                <a href="#" class="buy_button">Купить</a>
+                                                <div class="delivery_content">
+                                                    <a class="" href="#">
+
+                                                    </a>
+                                                </div>
+                                                <div class="like_product">
+                                                    <a href="#">
+
+                                                    </a>
+                                                </div>
+                                                <a href="#" class="review_button">Просмотр</a>
+                                            </div>
+                                            <!-- product -->
+
+                                        </div>
+                                        <div class="wn-item">
+
+                                            <div class="product">
+                                                <img src="images/wine_product.png" class="bottle" alt="product-wine">
+                                                <img src="images/stock.png" class="stock" alt="stock">
+                                                <h4>Вино	&#8243Грушки яблочки&#8243:) </h4>
+                                                <p><span class="first_price">$79.00</span>$36.00
+                                                </p>
+                                                <img src="images/rating.png" class="rating" alt="rating">
+                                                <a href="#" class="buy_button">Купить</a>
+                                                <div class="delivery_content">
+                                                    <a class="" href="#">
+
+                                                    </a>
+                                                </div>
+                                                <div class="like_product">
+                                                    <a href="#">
+
+                                                    </a>
+                                                </div>
+                                                <a href="#" class="review_button">Просмотр</a>
+                                            </div>
+                                            <!-- product -->
+
+                                        </div>
+
+                                    </div>
+                                    <script type="text/javascript" src="js/jquery.contentcarousel_wane.js"></script>
+                                    <script type="text/javascript">
+                                        $('#twn-container').contentcarousel();
+                                    </script>
+                                </div>
+                            </div>
+                            <div>
+                                <div id="vodkawn-container" class="wn-container">
+                                    <div class="wn-wrapper">
+                                        <div class="wn-item">
+                                            <div class="product">
+                                                <img src="images/wine_product.png" class="bottle" alt="product-wine">
+                                                <img src="images/stock.png" class="stock" alt="stock">
+                                                <h4>Вино	&#8243Грушки яблочки&#8243:) </h4>
+                                                <p><span class="first_price">$79.00</span>$36.00
+                                                </p>
+                                                <img src="images/rating.png" class="rating" alt="rating">
+                                                <a href="#" class="buy_button">Купить</a>
+                                                <div class="delivery_content">
+                                                    <a class="" href="#">
+
+                                                    </a>
+                                                </div>
+                                                <div class="like_product">
+                                                    <a href="#">
+
+                                                    </a>
+                                                </div>
+                                                <a href="#" class="review_button">Просмотр</a>
+                                            </div>
+                                            <!-- product -->
+
+                                        </div>
+                                        <div class="wn-item ">
+                                            <div class="product">
+                                                <img src="images/wine_product.png" class="bottle" alt="product-wine">
+                                                <img src="images/stock.png" class="stock" alt="stock">
+                                                <h4>Вино	&#8243Грушки яблочки&#8243:) </h4>
+                                                <p><span class="first_price">$79.00</span>$36.00
+                                                </p>
+                                                <img src="images/rating.png" class="rating" alt="rating">
+                                                <a href="#" class="buy_button">Купить</a>
+                                                <div class="delivery_content">
+                                                    <a class="" href="#">
+
+                                                    </a>
+                                                </div>
+                                                <div class="like_product">
+                                                    <a href="#">
+
+                                                    </a>
+                                                </div>
+                                                <a href="#" class="review_button">Просмотр</a>
+                                            </div>
+                                            <!-- product -->
+
+                                        </div>
+                                        <div class="wn-item">
+                                            <div class="product">
+                                                <img src="images/wine_product.png" class="bottle" alt="product-wine">
+                                                <img src="images/stock.png" class="stock" alt="stock">
+                                                <h4>Вино	&#8243Грушки яблочки&#8243:) </h4>
+                                                <p><span class="first_price">$79.00</span>$36.00
+                                                </p>
+                                                <img src="images/rating.png" class="rating" alt="rating">
+                                                <a href="#" class="buy_button">Купить</a>
+                                                <div class="delivery_content">
+                                                    <a class="" href="#">
+
+                                                    </a>
+                                                </div>
+                                                <div class="like_product">
+                                                    <a href="#">
+
+                                                    </a>
+                                                </div>
+                                                <a href="#" class="review_button">Просмотр</a>
+                                            </div>
+                                            <!-- product -->
+
+                                        </div>
+                                        <div class="wn-item">
+
+                                            <div class="product">
+                                                <img src="images/wine_product.png" class="bottle" alt="product-wine">
+                                                <img src="images/stock.png" class="stock" alt="stock">
+                                                <h4>Вино	&#8243Грушки яблочки&#8243:) </h4>
+                                                <p><span class="first_price">$79.00</span>$36.00
+                                                </p>
+                                                <img src="images/rating.png" class="rating" alt="rating">
+                                                <a href="#" class="buy_button">Купить</a>
+                                                <div class="delivery_content">
+                                                    <a class="" href="#">
+
+                                                    </a>
+                                                </div>
+                                                <div class="like_product">
+                                                    <a href="#">
+
+                                                    </a>
+                                                </div>
+                                                <a href="#" class="review_button">Просмотр</a>
+                                            </div>
+                                            <!-- product -->
+
+                                        </div>
+
+                                    </div>
+                                    <script type="text/javascript" src="js/jquery.contentcarousel_wane.js"></script>
+                                    <script type="text/javascript">
+                                        $('#vodkawn-container').contentcarousel();
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news">
+                        <h2>Новости</h2>
+                        <div id="ca-containers" class="slider-container">
+                            <div class="sl-wrapper">
+                                <div class="sl-item">
+
+                                    <img src="images/1903x480.png" alt="img-news">
+                                    <h3>Ut tellus dolor, dapibus eget,elementum vel</h3>
+                                    <span>25 January, 2013, 5 comments</span>
+                                    <p>Aliquam erat volutpat. Duis ac turpis. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris fermentum dictum magna.</p>
+                                    <a href="#">Читать дальше &#62</a>
+                                </div>
+                                <div class="sl-item ">
+
+                                    <img src="images/1903x480.png" alt="img-news">
+                                    <h3>Ut tellus dolor, dapibus eget,elementum vel</h3>
+                                    <span>25 January, 2013, 5 comments</span>
+                                    <p>Aliquam erat volutpat. Duis ac turpis. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris fermentum dictum magna.</p>
+                                    <a href="#">Читать дальше &#62</a>
+
+                                </div>
+                                <div class="sl-item">
+                                    <img src="images/1903x480.png" alt="img-news">
+                                    <h3>Ut tellus dolor, dapibus eget,elementum vel</h3>
+                                    <span>25 January, 2013, 5 comments</span>
+                                    <p>Aliquam erat volutpat. Duis ac turpis. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris fermentum dictum magna.</p>
+                                    <a href="#">Читать дальше &#62</a>
+
+                                </div>
+                                <div class="sl-item ">
+                                    <img src="images/1903x480.png" alt="img-news">
+                                    <h3>Ut tellus dolor, dapibus eget,elementum vel</h3>
+                                    <span>25 January, 2013, 5 comments</span>
+                                    <p>Aliquam erat volutpat. Duis ac turpis. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris fermentum dictum magna.</p>
+                                    <a href="#">Читать дальше &#62</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="loyalty">
+                        <h2>Программа лояльности</h2>
+                        <div id="ca-containerss" class="slider-container">
+                            <div class="sl-wrapper">
+                                <div class="sl-item">
+
+                                    <blockquote><span>&#34;</span>
+                                        <p> Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis.</p>
+                                    </blockquote>
+                                    <div class="author">
+                                        <img src="images/woman.png" alt="author">
+                                        <h4 class="name">Marta Healy</h4>
+                                        <span class="city">Los Angeles</span>
+                                    </div>
+                                </div>
+                                <div class="sl-item ">
+
+                                    <blockquote><span>&#34;</span>
+                                        <p> Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis.</p>
+                                    </blockquote>
+                                    <div class="author">
+                                        <img src="images/woman.png" alt="author">
+                                        <h4 class="name">Marta Healy</h4>
+                                        <span class="city">Los Angeles</span>
+                                    </div>
+
+                                </div>
+                                <div class="sl-item">
+                                    <blockquote><span>&#34;</span>
+                                        <p> Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis.</p>
+                                    </blockquote>
+                                    <div class="author">
+                                        <img src="images/woman.png" alt="author">
+                                        <h4 class="name">Marta Healy</h4>
+                                        <span class="city">Los Angeles</span>
+                                    </div>
+
+                                </div>
+                                <div class="sl-item ">
+                                    <blockquote><span>&#34;</span>
+                                        <p> Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis.</p>
+                                    </blockquote>
+                                    <div class="author">
+                                        <img src="images/woman.png" alt="author">
+                                        <h4 class="name">Marta Healy</h4>
+                                        <span class="city">Los Angeles</span>
+                                    </div>
+                               </div>
+                            </div>
+                        </div>
+
+                        <script type="text/javascript" src="js/jquery.contentcarousel-news.js"></script>
+                        <script type="text/javascript">
+                            $('#ca-containerss').contentcarousel();
+                        </script>
+                        <script type="text/javascript">
+                            $('#ca-containers').contentcarousel();
+                        </script>
+
+                    </div>
+
+                    <!-- go top-->
+                    <a href="#" id='Go_Top'>&#8249;</a>
+                    <!-- end go top-->
+                    <div class="bestsellers">
+                        <h2>Бестселлеры</h2>
+
+                        <div id="bwn-container" class="wn-container">
+                            <div class="wn-wrapper">
+                                <div class="wn-item">
+                                    <div class="product">
+                                        <img src="images/wine_product.png" class="bottle" alt="product-wine">
+                                        <img src="images/stock.png" class="stock" alt="stock">
+                                        <h4>Вино	&#8243Грушки яблочки&#8243:) </h4>
+                                        <p><span class="first_price">$79.00</span>$36.00
+                                        </p>
+                                        <img src="images/rating.png" class="rating" alt="rating">
+                                        <a href="#" class="buy_button">Купить</a>
+                                        <div class="delivery_content">
+                                            <a href="#">
+
+                                            </a>
+                                        </div>
+                                        <div class="like_product">
+                                            <a href="#">
+
+                                            </a>
+                                        </div>
+                                        <a href="#" class="review_button">Просмотр</a>
+                                    </div>
+                                    <!-- product -->
+
+                                </div>
+                                <div class="wn-item ">
+                                    <div class="product">
+                                        <img src="images/wine_product.png" class="bottle" alt="product-wine">
+                                        <img src="images/stock.png" class="stock" alt="stock">
+                                        <h4>Вино	&#8243Грушки яблочки&#8243:) </h4>
+                                        <p><span class="first_price">$79.00</span>$36.00
+                                        </p>
+                                        <img src="images/rating.png" class="rating" alt="rating">
+                                        <a href="#" class="buy_button">Купить</a>
+                                        <div class="delivery_content">
+                                            <a href="#">
+
+                                            </a>
+                                        </div>
+                                        <div class="like_product">
+                                            <a href="#">
+
+                                            </a>
+                                        </div>
+                                        <a href="#" class="review_button">Просмотр</a>
+                                    </div>
+                                    <!-- product -->
+
+                                </div>
+                                <div class="wn-item">
+                                    <div class="product">
+                                        <img src="images/wine_product.png" class="bottle" alt="product-wine">
+                                        <img src="images/stock.png" class="stock" alt="stock">
+                                        <h4>Вино	&#8243Грушки яблочки&#8243:) </h4>
+                                        <p><span class="first_price">$79.00</span>$36.00
+                                        </p>
+                                        <img src="images/rating.png" class="rating" alt="rating">
+                                        <a href="#" class="buy_button">Купить</a>
+                                        <div class="delivery_content">
+                                            <a href="#">
+
+                                            </a>
+                                        </div>
+                                        <div class="like_product">
+                                            <a href="#">
+
+                                            </a>
+                                        </div>
+                                        <a href="#" class="review_button">Просмотр</a>
+                                    </div>
+                                    <!-- product -->
+
+                                </div>
+                                <div class="wn-item">
+
+                                    <div class="product">
+                                        <img src="images/wine_product.png" class="bottle" alt="product-wine">
+                                        <img src="images/stock.png" class="stock" alt="stock">
+                                        <h4>Вино	&#8243Грушки яблочки&#8243:) </h4>
+                                        <p><span class="first_price">$79.00</span>$36.00
+                                        </p>
+                                        <img src="images/rating.png" class="rating" alt="rating">
+                                        <a href="#" class="buy_button">Купить</a>
+                                        <div class="delivery_content">
+                                            <a href="#">
+
+                                            </a>
+                                        </div>
+                                        <div class="like_product">
+                                            <a href="#">
+
+                                            </a>
+                                        </div>
+                                        <a href="#" class="review_button">Просмотр</a>
+                                    </div>
+                                    <!-- product -->
+
+                                </div>
+                            </div>
+                            <script type="text/javascript" src="js/jquery.contentcarousel_wane.js"></script>
+                            <script type="text/javascript">
+                                $('#bwn-container').contentcarousel();
+                            </script>
+                        </div>
+                    </div>
+                    <div class="novelty">
+                        <img src="images/products.png" alt="product">
+                        <h3>Новинки</h3>
+                        <a href="#">Подробнее</a>
+                    </div>
+                    <div class="discounts">
+                        <img src="images/products.png" alt="product">
+                        
+                            <h2>-50%</h2>
+                            <h3>On All <span>Sunglasses</span></h3>
+                            <a href="#">Shop Now!</a>
+                    </div>
+                    <div class="brand">
+                        <h2>Бренды</h2>
+                        <div id="ca-container" class="ca-container">
+                            <div class="ca-wrapper">
+                                <div class="ca-item">
+
+                                    <img src="images/Martini_Logo.png" />
+
+                                </div>
+                                <div class="ca-item ">
+
+                                    <img src="images/Martini_Logo.png" />
+                                </div>
+                                <div class="ca-item ">
+
+                                    <img src="images/Martini_Logo.png" />
+                                </div>
+                                <div class="ca-item ">
+
+                                    <img src="images/Martini_Logo.png" />
+                                </div>
+                                <div class="ca-item">
+                                    <img src="images/Martini_Logo.png" />
+
+                                </div>
+                                <div class="ca-item">
+
+                                    <img src="images/Martini_Logo.png" />
+                                </div>
+                                <div class="ca-item">
+                                    <img src="images/Martini_Logo.png" />
+
+                                </div>
+                                <div class="ca-item ">
+                                    <img src="images/Martini_Logo.png" />
+
+                                </div>
+                                <div class="ca-item ">
+                                    <img src="images/Martini_Logo.png" />
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+                        <script type="text/javascript" src="js/jquery.contentcarousel.js"></script>
+                        <script type="text/javascript">
+                            $('#ca-container').contentcarousel();
+                        </script>
+
+                    </div>
+                    <!-- brand -->
+                </div>
+                <!-- container -->
+        </article>
+        <!-- content -->
+        <footer id="footer">
+            <div class="footer_top">
+                <div class="container">
+                    <div class="footer_left">
+                        <address>ул.Набережно-Крещатика,3А</address>
+                        <address>ул.Урловская 11/44</address>
+                        <span class="first_number">067-242-48-06</span>
+                        <span>094-822-57-07</span>
+                        <span class="last_number">067-242-48-03</span>
+                        <span class="e-mail">wineandfood.kiev@gmail.com</span>
+                        <ul class="social-icons">
+                            <li class="facebook">
+                                <a href="#"></a>
+                            </li>
+                            <li class="twiter">
+                                <a href="#"></a>
+                            </li>
+                            <li class="vk">
+                                <a href="#"></a>
+                            </li>
+                            <li class="foursquare">
+                                <a href="#"></a>
+                            </li>
+                            <li class="google">
+                                <a href="#"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- footer_left -->
+                    <div class="footer_center">
+                        <ul>
+                            <li><a href="#">Блог <span>></span></a></li>
+                            <li><a href="#">О нас <span>></span></a></li>
+                            <li><a href="#">Программа лояльности <span>></span></a></li>
+                            <li><a href="#">Акции <span>></span></a></li>
+                            <li><a href="#">Контакты <span>></span></a></li>
+                            <li><a href="#">Доставка и оплата <span>></span></a></li>
+                        </ul>
+                    </div>
+                    <!-- footer_center -->
+                    <div class="footer_right">
+                        <!--	<div class="map" data-maplat="46.981183" data-maplon="31.971390" data-mapzoom="15" data-color="" data-height="22.222"></div> -->
+                        <div id="map" class="map" data-maplat="50.444071" data-maplon="30.534115" data-mapzoom="15" data-color="" data-height="22.222"></div>
+                    </div>
+                </div>
+                <!-- container -->
+            </div>
+            <!-- footer_top -->
+            <div class="footer_bottom">
+                <div class="container">
+                    <p>&#169 2016 <a href="#">intellectus-studio</a>. All Rights Reserved.</p>
+                </div>
+                <!-- container -->
+            </div>
+            <!-- footer_bottom -->
+        </footer>
+        <!-- footer -->
+        </div>
+        <!-- wrapper -->
+</body>
+
+</html>
